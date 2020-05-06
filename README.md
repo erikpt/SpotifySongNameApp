@@ -9,7 +9,8 @@ I wrote this after hearing some streamers describe their frustration with other 
 1. Launch OBS
 2. Launch SpotifySongNameApp.exe
 3. Move the app where you'd like. It's currently set to be the top-most window, so if you don't want it to interfere, move it to the edge of your monitor or to a secondary screen. Note: You'll have to click and drag the black background.  Don't try to drag by the Spotify logo or the text.
-3. Add a WindowCapture object for [SpotifySongNameApp.exe]Form1
+4. Add a WindowCapture object for [SpotifySongNameApp.exe]: Form1
+5. Profit!
 
 ### To quit the app
 Right-click the taskbar icon and choose close.
