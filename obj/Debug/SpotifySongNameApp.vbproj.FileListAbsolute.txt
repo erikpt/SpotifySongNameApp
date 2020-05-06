@@ -1,0 +1,12 @@
+C:\Users\Erik\source\repos\SpotifySongNameApp\bin\Debug\SpotifySongNameApp.exe.config
+C:\Users\Erik\source\repos\SpotifySongNameApp\bin\Debug\SpotifySongNameApp.exe
+C:\Users\Erik\source\repos\SpotifySongNameApp\bin\Debug\SpotifySongNameApp.pdb
+C:\Users\Erik\source\repos\SpotifySongNameApp\bin\Debug\SpotifySongNameApp.xml
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.vbprojAssemblyReference.cache
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.Form1.resources
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.Resources.resources
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.vbproj.GenerateResource.cache
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.vbproj.CoreCompileInputs.cache
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.exe
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.xml
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Debug\SpotifySongNameApp.pdb
