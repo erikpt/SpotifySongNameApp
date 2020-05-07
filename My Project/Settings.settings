@@ -24,7 +24,7 @@
       <Value Profile="(Default)">40</Value>
     </Setting>
     <Setting Name="WindowWidth" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">580</Value>
+      <Value Profile="(Default)">600</Value>
     </Setting>
   </Settings>
 </SettingsFile>

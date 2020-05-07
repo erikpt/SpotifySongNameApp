@@ -14,6 +14,8 @@ Public Class Form1
     Private trimmedCharCount As Integer = 0
     Private antiScrollPauseMillisecs As Integer = 2000
     Private waitedFor As Integer = 0
+    Private zString As String = "z"
+
 
     <DllImport("user32.dll", SetLastError:=True)>
     Public Shared Function ReleaseCapture() As Boolean
@@ -27,6 +29,7 @@ Public Class Form1
         Timer1.Interval = 3000
         Timer1.Start()
         Timer2.Interval = 150
+        Timer2.Stop()
 
         Try
             Dim fontSize As Single
@@ -39,8 +42,6 @@ Public Class Form1
             If My.Settings.ShowLogo Then
                 showLogo = True
             End If
-
-            Label1.Padding = New Padding(Label1.Padding.Left, Math.Truncate(GetTextHeight() / 8) + 1, Label1.Padding.Right, Label1.Padding.Bottom)
 
             If My.Settings.FontSize > My.Settings.WindowHeight / 2 Then
                 MessageBox.Show("Error: WindowHeight must be at least 2 times the value of FontSize. Please edit the config file. Exiting", My.Application.Info.AssemblyName, MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -62,6 +63,19 @@ Public Class Form1
         Catch ex As Exception
             Me.Size = New Size(588, 40)
         End Try
+
+        Try
+            Dim textHeight As Integer = GetTextHeight()
+            Dim padValue As Integer = 0 'Math.Truncate(textHeight / (textHeight / (Me.Size.Height - 4)))
+            'padValue = Math.Truncate(textHeight / 2) + Math.Truncate(textHeight / (Label1.Font.SizeInPoints / (Me.Size.Height - 4)))
+            padValue = Math.Truncate((Me.Size.Height - textHeight) / 2)
+
+            Label1.Padding = New Padding(Label1.Padding.Left, Math.Truncate(textHeight / 8) + 1, Label1.Padding.Right, Label1.Padding.Bottom)
+            Label1.Padding = New Padding(Label1.Padding.Left, padValue, Label1.Padding.Right, padValue)
+        Catch ex As Exception
+            Label1.Padding = New Padding(0, 1, 0, 1)
+        End Try
+
 
         Try
             Me.Label1.ForeColor = System.Drawing.ColorTranslator.FromHtml(My.Settings.FontColor)
@@ -160,8 +174,14 @@ Public Class Form1
             Me.Label1.Text = Me.Label1.Text.Substring(0, Me.Label1.Text.Length - 1)
             trimmedCharCount += 1
         Loop
+        zString = "z"
+        For i = 1 To trimmedCharCount
+            zString &= "z"
+        Next
         waitedFor = 0
-        Timer2.Start()
+        If scrollText Then
+            Timer2.Start()
+        End If
     End Sub
 
     Private Function IsTextTooBig(input As String) As Boolean
@@ -188,16 +208,19 @@ Public Class Form1
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         waitedFor += Timer2.Interval
+        If Not scrollText Then
+            Exit Sub
+        End If
         If waitedFor < antiScrollPauseMillisecs Then
             Exit Sub
         End If
-
-        If Not IsTextTooBig(Label1.Text & "zzzzzzzzzzzzzzzzzzzzz") Then
+        ' If Not IsTextTooBig(Label1.Text & zString) Then
+        If Not IsTextTooBig(nowPlaying) Then
             Exit Sub
         End If
 
-        If scrollText And IsTextTooBig(Label1.Text & "zzzzzzzzzzzzzzzzzzzz") Then
-
+        'If scrollText And IsTextTooBig(Label1.Text & zString) Then
+        If scrollText And IsTextTooBig(nowPlaying) Then
             If subtractedChars = 0 And trimmedCharCount <= 0 Then
                 Me.Label1.Text = Me.Label1.Text.Substring(5, Me.Label1.Text.Length - 5) & "    " & nowPlaying.Substring(subtractedChars, 1)
                 DBG("hit1")

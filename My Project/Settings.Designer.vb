@@ -119,7 +119,7 @@ Namespace My
         
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("580")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("600")>  _
         Public ReadOnly Property WindowWidth() As String
             Get
                 Return CType(Me("WindowWidth"),String)
