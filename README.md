@@ -2,7 +2,7 @@
 Quick and easy way for streamers to show their currently playing track from Spotify in OBS
 I wrote this after hearing some streamers describe their frustration with other plugins that are pay for play or having to jump through a lot of hoops to get the song name to display on screen.
 
-### Now updated to version 1.02
+### Now updated to version 1.03
 
 [Download the app already!](https://github.com/erikpt/SpotifySongNameApp/releases "Releases")
 
