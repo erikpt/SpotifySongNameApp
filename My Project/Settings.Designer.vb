@@ -62,6 +62,51 @@ Namespace My
                 Return CType(Me("BlankOnNotPlaying"),Boolean)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Arial Narrow")>  _
+        Public ReadOnly Property FontName() As String
+            Get
+                Return CType(Me("FontName"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("15")>  _
+        Public ReadOnly Property FontSize() As String
+            Get
+                Return CType(Me("FontSize"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("#32CD32"&Global.Microsoft.VisualBasic.ChrW(9))>  _
+        Public ReadOnly Property FontColor() As String
+            Get
+                Return CType(Me("FontColor"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public ReadOnly Property ShowLogo() As Boolean
+            Get
+                Return CType(Me("ShowLogo"),Boolean)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public ReadOnly Property AllowScrollingText() As Boolean
+            Get
+                Return CType(Me("AllowScrollingText"),Boolean)
+            End Get
+        End Property
     End Class
 End Namespace
 
