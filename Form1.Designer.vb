@@ -66,7 +66,7 @@ Partial Class Form1
         Me.PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
         '
@@ -88,7 +88,9 @@ Partial Class Form1
         Me.ForeColor = System.Drawing.Color.LimeGreen
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(3840, 400)
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(588, 40)
         Me.Name = "Form1"
         Me.ShowIcon = False
         Me.Text = "Form1"

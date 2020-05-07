@@ -9,3 +9,4 @@ C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Release\SpotifySongNameApp.vbp
 C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Release\SpotifySongNameApp.exe
 C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Release\SpotifySongNameApp.xml
 C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Release\SpotifySongNameApp.pdb
+C:\Users\Erik\source\repos\SpotifySongNameApp\obj\Release\SpotifySongNameApp.vbprojAssemblyReference.cache

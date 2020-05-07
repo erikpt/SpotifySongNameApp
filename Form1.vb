@@ -39,19 +39,28 @@ Public Class Form1
             If My.Settings.ShowLogo Then
                 showLogo = True
             End If
-            If My.Settings.FontSize > 14 And My.Settings.FontSize < 18 Then
-                Label1.Padding = New Padding(Label1.Padding.Left, Label1.Padding.Top - 2, Label1.Padding.Right, Label1.Padding.Bottom)
-            ElseIf My.Settings.FontSize > 18 And My.Settings.FontSize < 21 Then
-                Label1.Padding = New Padding(Label1.Padding.Left, Label1.Padding.Top - 5, Label1.Padding.Right, Label1.Padding.Bottom)
-            ElseIf My.Settings.FontSize > 21 Then
-                Label1.Padding = New Padding(Label1.Padding.Left, Label1.Padding.Top - 8, Label1.Padding.Right, Label1.Padding.Bottom)
-            ElseIf My.Settings.FontSize < 14 Then
-                Label1.Padding = New Padding(Label1.Padding.Left, Label1.Padding.Top + 3, Label1.Padding.Right, Label1.Padding.Bottom)
+
+            Label1.Padding = New Padding(Label1.Padding.Left, Math.Truncate(GetTextHeight() / 8) + 1, Label1.Padding.Right, Label1.Padding.Bottom)
+
+            If My.Settings.FontSize > My.Settings.WindowHeight / 2 Then
+                MessageBox.Show("Error: WindowHeight must be at least 2 times the value of FontSize. Please edit the config file. Exiting", My.Application.Info.AssemblyName, MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Application.Exit()
             End If
-
-
         Catch ex As Exception
             Me.Label1.Font = New Font("Arial Narrow", 16.0F, FontStyle.Bold)
+        End Try
+
+        Try
+            If My.Settings.WindowHeight > 0 And My.Settings.WindowHeight <= Me.MaximumSize.Height Then
+                Me.Size = New Size(Me.Size.Width, My.Settings.WindowHeight)
+            End If
+            If My.Settings.WindowWidth > 0 And My.Settings.WindowWidth <= Me.MaximumSize.Width Then
+                Me.Size = New Size(My.Settings.WindowWidth, Me.Size.Height)
+                Label1.Size = New Size(Me.Size.Width - 40, Me.Label1.Height)
+            End If
+
+        Catch ex As Exception
+            Me.Size = New Size(588, 40)
         End Try
 
         Try
@@ -147,7 +156,7 @@ Public Class Form1
         trimmedCharCount = 0
         subtractedChars = 0
         nowPlayingLen = nowPlaying.Length
-        Do While IsTextTooBig(Me.Label1.Text)
+        Do While IsTextTooBig(Me.Label1.Text) And Not Me.Label1.Text = ""
             Me.Label1.Text = Me.Label1.Text.Substring(0, Me.Label1.Text.Length - 1)
             trimmedCharCount += 1
         Loop
@@ -157,25 +166,37 @@ Public Class Form1
 
     Private Function IsTextTooBig(input As String) As Boolean
         Dim measuredTextWidth As Integer = TextRenderer.MeasureText(input, Label1.Font).Width
-        If measuredTextWidth > Label1.Width - 5 Then
+
+        If measuredTextWidth > Label1.Width - (5) Then
             Return True
         Else
             Return False
         End If
     End Function
 
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+    Private Function GetTextHeight() As Integer
+        Dim measuredTextHeight As Integer = 0
 
+        Try
+            measuredTextHeight = TextRenderer.MeasureText(Label1.Text, Label1.Font).Height
+        Catch ex As Exception
+            measuredTextHeight = 0
+        End Try
+
+        Return measuredTextHeight
+    End Function
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         waitedFor += Timer2.Interval
         If waitedFor < antiScrollPauseMillisecs Then
             Exit Sub
         End If
 
-        If Not IsTextTooBig(Label1.Text & "zzzzzzz") Then
+        If Not IsTextTooBig(Label1.Text & "zzzzzzzzzzzzzzzzzzzzz") Then
             Exit Sub
         End If
 
-        If scrollText And IsTextTooBig(Label1.Text & "zzzzzzz") Then
+        If scrollText And IsTextTooBig(Label1.Text & "zzzzzzzzzzzzzzzzzzzz") Then
 
             If subtractedChars = 0 And trimmedCharCount <= 0 Then
                 Me.Label1.Text = Me.Label1.Text.Substring(5, Me.Label1.Text.Length - 5) & "    " & nowPlaying.Substring(subtractedChars, 1)
