@@ -106,6 +106,7 @@ Public Class Form1
                         Me.Label1.Text = "Nothing Playing"
                         Me.PictureBox1.Visible = False
                     End If
+                    Me.nowPlaying = Nothing
                 Else
                     If Not Me.nowPlaying = w.MainWindowTitle Then
                         Me.Label1.Text = w.MainWindowTitle
