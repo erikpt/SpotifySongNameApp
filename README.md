@@ -14,6 +14,9 @@ I wrote this after hearing some streamers describe their frustration with other 
 4. Add a WindowCapture object for [SpotifySongNameApp.exe]: Form1
 5. Profit!
 
+#### Here's a preview of the app's default appearance
+![Image of app while running](https://github.com/erikpt/SpotifySongNameApp/blob/master/docs/defaultView.png?raw=true)
+
 ## Advanced Usage aka Editing the SpotifySongNameApp.exe.config file
 This version includes the ability to change the following settings using an XML file. If this app gains traction I'll add a user interface to configure these settings, but in the meantime editing the config file is the way to go.  The SpotifySongNameApp.exe.config file should stay in the same folder as SpotifySongNameApp.exe.
 ![Image of XML Settings](https://github.com/erikpt/SpotifySongNameApp/blob/master/docs/Options.PNG?raw=true)
