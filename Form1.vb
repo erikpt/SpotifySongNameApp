@@ -108,11 +108,15 @@ Public Class Form1
                     End If
                     Me.nowPlaying = Nothing
                 Else
-                    If Not Me.nowPlaying = w.MainWindowTitle Then
-                        Me.Label1.Text = w.MainWindowTitle
-                        Me.nowPlaying = w.MainWindowTitle
-                        Me.PictureBox1.Visible = showLogo
-                        NewSong()
+                    Dim titleText As String = w.MainWindowTitle
+                    If titleText.Contains("&") Then
+                        titleText = titleText.Replace("&", "&&")
+                    End If
+
+                    If Not Me.nowPlaying = titleText Then
+                        NewSong(titleText)
+                    Else
+                        Exit Sub
                     End If
                 End If
             End If
@@ -166,7 +170,10 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub NewSong()
+    Private Sub NewSong(ByVal newSongName As String)
+        Me.Label1.Text = newSongName
+        Me.nowPlaying = newSongName
+        Me.PictureBox1.Visible = showLogo
         Timer2.Stop()
         trimmedCharCount = 0
         subtractedChars = 0
@@ -193,6 +200,7 @@ Public Class Form1
         Else
             Return False
         End If
+
     End Function
 
     Private Function GetTextHeight() As Integer

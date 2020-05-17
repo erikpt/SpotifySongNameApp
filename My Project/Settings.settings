@@ -2,28 +2,28 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="BlankOnNotPlaying" Type="System.Boolean" Scope="Application">
+    <Setting Name="BlankOnNotPlaying" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="FontName" Type="System.String" Scope="Application">
+    <Setting Name="FontName" Type="System.String" Scope="User">
       <Value Profile="(Default)">Arial Narrow</Value>
     </Setting>
-    <Setting Name="FontSize" Type="System.String" Scope="Application">
+    <Setting Name="FontSize" Type="System.String" Scope="User">
       <Value Profile="(Default)">18</Value>
     </Setting>
-    <Setting Name="FontColor" Type="System.String" Scope="Application">
+    <Setting Name="FontColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">#32CD32	</Value>
     </Setting>
-    <Setting Name="ShowLogo" Type="System.Boolean" Scope="Application">
+    <Setting Name="ShowLogo" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="AllowScrollingText" Type="System.Boolean" Scope="Application">
+    <Setting Name="AllowScrollingText" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="WindowHeight" Type="System.String" Scope="Application">
+    <Setting Name="WindowHeight" Type="System.String" Scope="User">
       <Value Profile="(Default)">40</Value>
     </Setting>
-    <Setting Name="WindowWidth" Type="System.String" Scope="Application">
+    <Setting Name="WindowWidth" Type="System.String" Scope="User">
       <Value Profile="(Default)">600</Value>
     </Setting>
   </Settings>

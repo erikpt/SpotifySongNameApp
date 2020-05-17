@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -54,76 +54,100 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public ReadOnly Property BlankOnNotPlaying() As Boolean
+        Public Property BlankOnNotPlaying() As Boolean
             Get
                 Return CType(Me("BlankOnNotPlaying"),Boolean)
             End Get
+            Set
+                Me("BlankOnNotPlaying") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Arial Narrow")>  _
-        Public ReadOnly Property FontName() As String
+        Public Property FontName() As String
             Get
                 Return CType(Me("FontName"),String)
             End Get
+            Set
+                Me("FontName") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("18")>  _
-        Public ReadOnly Property FontSize() As String
+        Public Property FontSize() As String
             Get
                 Return CType(Me("FontSize"),String)
             End Get
+            Set
+                Me("FontSize") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("#32CD32"&Global.Microsoft.VisualBasic.ChrW(9))>  _
-        Public ReadOnly Property FontColor() As String
+        Public Property FontColor() As String
             Get
                 Return CType(Me("FontColor"),String)
             End Get
+            Set
+                Me("FontColor") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public ReadOnly Property ShowLogo() As Boolean
+        Public Property ShowLogo() As Boolean
             Get
                 Return CType(Me("ShowLogo"),Boolean)
             End Get
+            Set
+                Me("ShowLogo") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
-        Public ReadOnly Property AllowScrollingText() As Boolean
+        Public Property AllowScrollingText() As Boolean
             Get
                 Return CType(Me("AllowScrollingText"),Boolean)
             End Get
+            Set
+                Me("AllowScrollingText") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("40")>  _
-        Public ReadOnly Property WindowHeight() As String
+        Public Property WindowHeight() As String
             Get
                 Return CType(Me("WindowHeight"),String)
             End Get
+            Set
+                Me("WindowHeight") = value
+            End Set
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("600")>  _
-        Public ReadOnly Property WindowWidth() As String
+        Public Property WindowWidth() As String
             Get
                 Return CType(Me("WindowWidth"),String)
             End Get
+            Set
+                Me("WindowWidth") = value
+            End Set
         End Property
     End Class
 End Namespace
